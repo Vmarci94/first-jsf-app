@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <managed-bean>
+        <managed-bean-name>userNumberBean</managed-bean-name>
+        <managed-bean-class>hu.vmarci94.example.UserNumberBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>minimum</property-name>
+            <property-class>int</property-class>
+            <value>0</value>
+        </managed-property>
+        <managed-property>
+            <property-name>maximum</property-name>
+            <property-class>int</property-class>
+            <value>10</value>
+        </managed-property>
+    </managed-bean>
+
+    <navigation-rule>
+        <display-name>response</display-name>
+        <from-view-id>/response.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>greeting</from-outcome>
+            <to-view-id>/greeting.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>
+
